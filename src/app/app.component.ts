@@ -6,9 +6,11 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  template: `<Button (click)="this.Increment()"
+    >Clicks now = {{ this.counter }}</Button
+  >`,
 })
 export class AppComponent {
-  title = 'standalone';
+  counter: number = 0;
+  Increment = () => this.counter++;
 }
